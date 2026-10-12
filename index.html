@@ -11,12 +11,12 @@
 <style>
 :root{
   --paper:#eceff1; --card:#f7f8f9; --ink:#15222c; --muted:#4d5d69; --line:#c3ccd2;
-  --steel:#2d5b7a; --accent:#d9480f;
+  --steel:#2d5b7a; --accent:#d9480f; --doodle:#8a9ea9;
   --head:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{--paper:#11181e; --card:#19222a; --ink:#e8edf0; --muted:#9fb0bb; --line:#2f3d47; --steel:#7fb2d3; --accent:#ff8a4c}
+  :root{--paper:#11181e; --card:#19222a; --ink:#e8edf0; --muted:#9fb0bb; --line:#2f3d47; --steel:#7fb2d3; --accent:#ff8a4c; --doodle:#5f7a8c}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -99,7 +99,23 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
 .hero-links a:hover img,.hero-links a:focus-visible img{border-color:var(--accent)}
 .hero-links a:hover span{color:var(--accent)}
 .li-card img{width:170px;height:170px;border-radius:50%;object-fit:cover;background:var(--card);border:3px solid var(--line)}
-.res-card img{width:min(230px,60vw);height:auto}
+.doodle{width:140px;height:140px;color:var(--doodle);transition:color .2s;display:block}
+.res-card:hover .doodle,.res-card:focus-visible .doodle{color:var(--accent)}
+
+@media (max-width:760px){
+  nav{position:static}
+  nav .wrap{flex-direction:column;align-items:flex-start;gap:.3rem;padding-top:.7rem;padding-bottom:.7rem}
+  nav ul{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;gap:1.1rem;max-width:100%;padding-bottom:.2rem}
+  .hero{padding:1.5rem 0 2rem}
+  .hero .wrap{gap:1.5rem}
+  .hero h1{font-size:clamp(2.6rem,13vw,3.4rem)}
+  .hero p.lead{margin-bottom:1.2rem}
+  .btn{padding:.6rem 1rem;font-size:.95rem}
+  .hero-links{flex-direction:row;justify-content:flex-start;align-items:flex-start;gap:1.8rem}
+  .li-card img{width:112px;height:112px}
+  .doodle{width:112px;height:112px}
+  .hero-links span{font-size:.9rem}
+}
 </style>
 </head>
 <body>
@@ -133,8 +149,20 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
         <span>Connect on LinkedIn</span>
       </a>
       <a class="res-card" href="Satyam_Patel_Resume.pdf" aria-label="Open resume as PDF">
-        <img src="images/resume-preview.png" alt="Preview of Satyam Patel's resume">
-        <span>Open resume (PDF)</span>
+        <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M34 52 L52 44 V170 L40 162 Z" fill="currentColor"/>
+          <path d="M62 30 L170 22 L178 168 L70 178 Z"/>
+          <path d="M140 30 l14 -2 M126 32 l24 -3 M152 40 l14 -2 M160 56 l8 -1 M72 166 l10 -1 M72 150 l22 -2 M72 134 l12 -1" stroke-width="2.5"/>
+          <path d="M82 112 H158 M82 134 H154 M82 156 H150" stroke-width="6"/>
+          <path d="M48 38 L102 28 L110 102 L56 112 Z" fill="var(--paper)"/>
+          <path d="M62 30 c-8 -10 2 -16 8 -10 c4 4 0 10 -4 10"/>
+          <circle cx="80" cy="60" r="10"/>
+          <path d="M62 94 C64 76 94 72 98 90 Z"/>
+          <circle cx="122" cy="56" r="5"/><path d="M134 56 H160"/>
+          <circle cx="122" cy="74" r="5"/><path d="M134 74 H148"/>
+          <path d="M182 22 l8 14 M194 20 v12 M186 40 h12" stroke-width="3"/>
+        </svg>
+        <span>Resume</span>
       </a>
     </div>
   </div>
