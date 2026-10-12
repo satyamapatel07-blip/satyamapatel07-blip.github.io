@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Smart Autonomous Watering System | Satyam Patel</title><meta name="description" content="A standalone IoT device that waters a plant on its own and streams sensor data to a cloud server.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#eceff1; --card:#f7f8f9; --ink:#15222c; --muted:#4d5d69; --line:#c3ccd2;
+  --steel:#2d5b7a; --accent:#d9480f;
+  --head:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#11181e; --card:#19222a; --ink:#e8edf0; --muted:#9fb0bb; --line:#2f3d47; --steel:#7fb2d3; --accent:#ff8a4c}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.075rem;line-height:1.65}
+a{color:var(--steel)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;padding-bottom:.8rem;gap:1rem;flex-wrap:wrap}
+nav strong{font-family:var(--head);font-weight:700}
+nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{font-family:var(--head);font-weight:500;font-size:.95rem;color:var(--ink);text-decoration:none}
+nav ul a:hover{color:var(--accent)}
+.hero{padding:4.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem);font-weight:800;font-stretch:112%;letter-spacing:-.02em}
+.hero p.role{font-family:var(--head);font-size:1.2rem;font-weight:500;color:var(--steel);margin:1rem 0 .6rem}
+.hero p.lead{max-width:34rem;margin:0 0 1.6rem;color:var(--muted)}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{font-family:var(--head);font-weight:600;padding:.7rem 1.2rem;border:2px solid var(--ink);color:var(--ink);text-decoration:none;border-radius:2px}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--accent);background:var(--accent);color:#fff}
+.drawing{width:100%;height:auto;color:var(--ink)}
+.drawing .cap{font-family:var(--head);font-size:11px;fill:var(--muted)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:750;margin-bottom:1.6rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.about p{margin:0 0 1rem;max-width:40rem}
+.facts{font-family:var(--head);font-size:.95rem;border-left:3px solid var(--accent);padding-left:1rem;align-self:start}
+.facts div+div{margin-top:.8rem}
+.facts b{display:block;font-weight:600;color:var(--muted);font-size:.85rem}
+.entry{background:var(--card);border:1px solid var(--line);padding:1.5rem 1.7rem;margin-bottom:1.2rem;border-radius:2px}
+.entry header{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline;margin-bottom:.7rem}
+.entry h3{font-size:1.35rem;font-weight:700}
+.entry .org{font-family:var(--head);color:var(--steel);font-weight:500}
+.entry .when{font-family:var(--head);color:var(--muted);font-size:.9rem}
+.entry ul{margin:.5rem 0 0;padding-left:1.2rem}
+.entry li{margin-bottom:.4rem}
+.feature{border-left:5px solid var(--accent)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem}
+.skills h3{font-size:1.05rem;margin-bottom:.6rem}
+.skills ul{list-style:none;padding:0;margin:0}
+.skills li{padding:.25rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.contact p{max-width:38rem}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-family:var(--head);font-size:.9rem}
+@media (max-width:760px){.hero .wrap,.two{grid-template-columns:1fr}.hero{padding-top:2.5rem}}
+
+.card-link{display:grid;grid-template-columns:200px 1fr;gap:1.4rem;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);margin-bottom:1.2rem;border-radius:2px}
+.card-link:hover{border-color:var(--accent)}
+.card-link img{width:100%;height:100%;object-fit:cover;display:block;min-height:150px}
+.card-link .t{padding:1.2rem 1.4rem 1.2rem 0}
+.card-link h3{font-size:1.35rem;margin-bottom:.2rem}
+.card-link p{margin:.5rem 0 0}
+.card-link .more{font-family:var(--head);font-weight:600;color:var(--accent);margin-top:.6rem;display:inline-block}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+.contact-grid .entry{margin:0}
+.qr{display:flex;gap:1.2rem;align-items:center}
+.qr img{width:140px;height:140px;background:#fff;padding:6px;border:1px solid var(--line)}
+.back{display:inline-block;margin:1.5rem 0 0;font-family:var(--head);font-weight:600;text-decoration:none}
+.proj-head{padding:2rem 0 2rem}
+.proj-head h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;font-stretch:108%;letter-spacing:-.02em;margin:.5rem 0 .8rem}
+.proj-head p{max-width:42rem;color:var(--muted);margin:0}
+.facts-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:2rem 0}
+.facts-row div{border-left:3px solid var(--accent);padding-left:.9rem;font-family:var(--head)}
+.facts-row b{display:block;font-size:.85rem;font-weight:600;color:var(--muted)}
+figure{margin:1.2rem 0}
+figure img{max-width:100%;height:auto;display:block;border:1px solid var(--line);background:#fff}
+figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-top:.4rem}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;align-items:start}
+.figs figure{margin:.5rem 0}
+.prose p{max-width:44rem;margin:0 0 1rem}
+@media (max-width:760px){.card-link,.contact-grid{grid-template-columns:1fr}.card-link .t{padding:0 1.2rem 1.2rem}.card-link img{height:200px}}
+</style></head><body><nav><div class="wrap"><strong><a href="../index.html" style="color:inherit;text-decoration:none">Satyam Patel</a></strong><ul><li><a href="../index.html#experience">Experience</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../index.html#contact">Resume &amp; LinkedIn</a></li></ul></div></nav>
+<header class="proj-head"><div class="wrap"><a class="back" href="../index.html#projects">Back to projects</a><h1>Smart Autonomous Watering System</h1><p>A standalone IoT device that waters a plant on its own and streams sensor data to a cloud server.</p><div class="facts-row"><div><b>Role</b>Electrical and product designer</div><div><b>Team</b>Group N-3, four students</div><div><b>Course</b>Intro to Engineering Design and Systems Thinking, Stevens</div><div><b>Timeline</b>Sept to Dec 2025</div><div><b>Tools</b>SolidWorks 2025, Arduino IDE, ESP32, 3D printing</div></div><figure><img src="../images/watering/final.jpg" alt="The finished watering system with its plant during testing." loading="lazy"><figcaption>The finished watering system with its plant during testing.</figcaption></figure></div></header><main><section><div class="wrap prose"><h2>The challenge</h2><p>Design a device that keeps a plant alive without human help. It had to fit in 5 x 5 x 10 inches, print in under eight hours on one printer, and deliver 20 mL of water each time the plant needed it.</p><p>The pump had to run every 24 hours and any time soil moisture fell below 30%. The device also had to run for five days, three of them in a row, and publish its readings over Wi-Fi to the Stevens MQTT server.</p></div></section><section><div class="wrap prose"><h2>Concepts</h2><p>We sketched three concepts: a portable case on wheels, a platform assembled with joints, and a compact box that keeps wires out of the way. The final design took the openable case from the first, the joints from the second, and the wire separation from the third. It was styled to look like a campus water-bottle fountain.</p><div class="figs"><figure><img src="../images/watering/sketch-early.jpg" alt="An early concept sketch." loading="lazy"><figcaption>An early concept sketch.</figcaption></figure><figure><img src="../images/watering/sketch.jpg" alt="Final design sketch with front, back, side and top views." loading="lazy"><figcaption>Final design sketch with front, back, side and top views.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Mechanical design</h2><p>Kosta modeled the housing in SolidWorks. The design started with three parts: main body, electronics box and lid. The electronics box pushed the depth past the size limit, so we removed the box and the floor of the body. That let the electronics sit just under the lid, cut print time and brought all three dimensions inside the limits late in the project.</p><p>A cutout on the front shows the water level in the bottle inside, and the pump dispenses from the same spot a real fountain would.</p><div class="figs"><figure><img src="../images/watering/cad.jpg" alt="Final design with the electronics box." loading="lazy"><figcaption>Final design with the electronics box.</figcaption></figure><figure><img src="../images/watering/exploded.jpg" alt="Exploded view of every piece." loading="lazy"><figcaption>Exploded view of every piece.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Electrical design</h2><p>The circuit runs on an ESP32. A capacitive sensor reads soil moisture, a DHT sensor reads air temperature and humidity, and a photocell reads light. A motor control board drives the pump.</p><p>I rewired the system to work more efficiently. Each sensor gets its own breadboard lane, and the wires are color coded: orange for power, green for ground and purple for data. In the final build I extended the photocell with jumper wires so it could sit outside the housing.</p><div class="figs"><figure><img src="../images/watering/circuit.jpg" alt="Circuit diagram." loading="lazy"><figcaption>Circuit diagram.</figcaption></figure><figure><img src="../images/watering/inside.jpg" alt="Electronics fitted inside the main body." loading="lazy"><figcaption>Electronics fitted inside the main body.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Software</h2><p>The Arduino code reads the sensors every 5 seconds, publishes to MQTT every 10 minutes and runs the pump for 8 seconds every 24 hours. It also runs the pump whenever soil moisture drops below 30%.</p><p>The 24-hour timer uses millis() instead of delay(), because delay() can block the program and interrupt MQTT uploads.</p><div class="figs"><figure><img src="../images/watering/flowchart.jpg" alt="Software flow: timers, sensor reads and the pump trigger." loading="lazy"><figcaption>Software flow: timers, sensor reads and the pump trigger.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Assembly and testing</h2><p>Early prints failed on the large overhang, so we reprinted several parts. The tested version had a separate electronics box, which broke the size limit, so the final build moved everything inside the main body.</p><p>Deployment ran from December 5 to 10. Data did not upload on the first day because the network was overloaded with student projects, not because of the code. Redeploying a few hours later fixed it, and the system then ran for five days.</p><div class="figs"><figure><img src="../images/watering/testing.jpg" alt="Version with the electronics box during testing." loading="lazy"><figcaption>Version with the electronics box during testing.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Results</h2><p>Soil moisture jumped every 24 hours, when the pump ran, then dried out slowly until the next watering. That confirmed the sensor calibration, wiring and code all worked. The light readings showed the room lights going off each night, which confirmed the photocell.</p><div class="figs"><figure><img src="../images/watering/graphs.jpg" alt="Soil humidity, light, air humidity and temperature over the deployment." loading="lazy"><figcaption>Soil humidity, light, air humidity and temperature over the deployment.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>What we learned</h2><p>None of us had coding experience going in, so coding was our biggest area of growth. We also learned that we should have managed time better: we deployed on the last possible day, and ran out of filament on some prints, which is why the final body is multicolored.</p></div></section></main>
+<footer><div class="wrap"><a href="../index.html#projects">Back to all projects</a> &middot; <a href="../Satyam_Patel_Resume.pdf">Resume (PDF)</a></div></footer></body></html>

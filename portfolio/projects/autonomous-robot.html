@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Autonomous Navigation Robot | Satyam Patel</title><meta name="description" content="A tracked robot that drives itself to four checkpoints using live coordinates over MQTT and three ultrasonic sensors.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#eceff1; --card:#f7f8f9; --ink:#15222c; --muted:#4d5d69; --line:#c3ccd2;
+  --steel:#2d5b7a; --accent:#d9480f;
+  --head:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#11181e; --card:#19222a; --ink:#e8edf0; --muted:#9fb0bb; --line:#2f3d47; --steel:#7fb2d3; --accent:#ff8a4c}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.075rem;line-height:1.65}
+a{color:var(--steel)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;padding-bottom:.8rem;gap:1rem;flex-wrap:wrap}
+nav strong{font-family:var(--head);font-weight:700}
+nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{font-family:var(--head);font-weight:500;font-size:.95rem;color:var(--ink);text-decoration:none}
+nav ul a:hover{color:var(--accent)}
+.hero{padding:4.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem);font-weight:800;font-stretch:112%;letter-spacing:-.02em}
+.hero p.role{font-family:var(--head);font-size:1.2rem;font-weight:500;color:var(--steel);margin:1rem 0 .6rem}
+.hero p.lead{max-width:34rem;margin:0 0 1.6rem;color:var(--muted)}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{font-family:var(--head);font-weight:600;padding:.7rem 1.2rem;border:2px solid var(--ink);color:var(--ink);text-decoration:none;border-radius:2px}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--accent);background:var(--accent);color:#fff}
+.drawing{width:100%;height:auto;color:var(--ink)}
+.drawing .cap{font-family:var(--head);font-size:11px;fill:var(--muted)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:750;margin-bottom:1.6rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.about p{margin:0 0 1rem;max-width:40rem}
+.facts{font-family:var(--head);font-size:.95rem;border-left:3px solid var(--accent);padding-left:1rem;align-self:start}
+.facts div+div{margin-top:.8rem}
+.facts b{display:block;font-weight:600;color:var(--muted);font-size:.85rem}
+.entry{background:var(--card);border:1px solid var(--line);padding:1.5rem 1.7rem;margin-bottom:1.2rem;border-radius:2px}
+.entry header{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline;margin-bottom:.7rem}
+.entry h3{font-size:1.35rem;font-weight:700}
+.entry .org{font-family:var(--head);color:var(--steel);font-weight:500}
+.entry .when{font-family:var(--head);color:var(--muted);font-size:.9rem}
+.entry ul{margin:.5rem 0 0;padding-left:1.2rem}
+.entry li{margin-bottom:.4rem}
+.feature{border-left:5px solid var(--accent)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem}
+.skills h3{font-size:1.05rem;margin-bottom:.6rem}
+.skills ul{list-style:none;padding:0;margin:0}
+.skills li{padding:.25rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.contact p{max-width:38rem}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-family:var(--head);font-size:.9rem}
+@media (max-width:760px){.hero .wrap,.two{grid-template-columns:1fr}.hero{padding-top:2.5rem}}
+
+.card-link{display:grid;grid-template-columns:200px 1fr;gap:1.4rem;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);margin-bottom:1.2rem;border-radius:2px}
+.card-link:hover{border-color:var(--accent)}
+.card-link img{width:100%;height:100%;object-fit:cover;display:block;min-height:150px}
+.card-link .t{padding:1.2rem 1.4rem 1.2rem 0}
+.card-link h3{font-size:1.35rem;margin-bottom:.2rem}
+.card-link p{margin:.5rem 0 0}
+.card-link .more{font-family:var(--head);font-weight:600;color:var(--accent);margin-top:.6rem;display:inline-block}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+.contact-grid .entry{margin:0}
+.qr{display:flex;gap:1.2rem;align-items:center}
+.qr img{width:140px;height:140px;background:#fff;padding:6px;border:1px solid var(--line)}
+.back{display:inline-block;margin:1.5rem 0 0;font-family:var(--head);font-weight:600;text-decoration:none}
+.proj-head{padding:2rem 0 2rem}
+.proj-head h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;font-stretch:108%;letter-spacing:-.02em;margin:.5rem 0 .8rem}
+.proj-head p{max-width:42rem;color:var(--muted);margin:0}
+.facts-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:2rem 0}
+.facts-row div{border-left:3px solid var(--accent);padding-left:.9rem;font-family:var(--head)}
+.facts-row b{display:block;font-size:.85rem;font-weight:600;color:var(--muted)}
+figure{margin:1.2rem 0}
+figure img{max-width:100%;height:auto;display:block;border:1px solid var(--line);background:#fff}
+figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-top:.4rem}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;align-items:start}
+.figs figure{margin:.5rem 0}
+.prose p{max-width:44rem;margin:0 0 1rem}
+@media (max-width:760px){.card-link,.contact-grid{grid-template-columns:1fr}.card-link .t{padding:0 1.2rem 1.2rem}.card-link img{height:200px}}
+</style></head><body><nav><div class="wrap"><strong><a href="../index.html" style="color:inherit;text-decoration:none">Satyam Patel</a></strong><ul><li><a href="../index.html#experience">Experience</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../index.html#contact">Resume &amp; LinkedIn</a></li></ul></div></nav>
+<header class="proj-head"><div class="wrap"><a class="back" href="../index.html#projects">Back to projects</a><h1>Autonomous Navigation Robot</h1><p>A tracked robot that drives itself to four checkpoints using live coordinates over MQTT and three ultrasonic sensors.</p><div class="facts-row"><div><b>Role</b>Mechanical design, plus wiring and software write-up</div><div><b>Team</b>Group E1-1, three students</div><div><b>Course</b>Intro to Engineering Design and Systems Thinking, Stevens</div><div><b>Result</b>Course finished in 32 s, zero collisions, 3 min limit</div><div><b>Tools</b>SolidWorks, ESP8266, Arduino, Bambu Lab P2S</div></div><figure><img src="../images/robot/final-front.jpg" alt="The finished robot with its 3D printed attachment." loading="lazy"><figcaption>The finished robot with its 3D printed attachment.</figcaption></figure></div></header><main><section><div class="wrap prose"><h2>The challenge</h2><p>Build a robot that drives to four checkpoints in under three minutes without hitting obstacles. Its position comes from a camera system that reads an ArUco marker on top of the robot and broadcasts X, Y and heading over MQTT.</p><p>The 3D printed attachment had to hold three ultrasonic sensors, an OLED display, a motor controller, a WeMos D1 board and the marker platform within a strict print-time limit.</p></div></section><section><div class="wrap prose"><h2>Concept design</h2><p>My first sketch set the design philosophy: a modular structure, with all three ultrasonic sensors facing forward so they would not interfere with each other or other parts. That three-sensor array stayed in every iteration.</p><div class="figs"><figure><img src="../images/robot/sketch.jpg" alt="First concept sketch with orthographic and isometric views." loading="lazy"><figcaption>First concept sketch with orthographic and isometric views.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Design iterations</h2><p>The first CAD model was enclosed and material heavy. The OLED bracket was hard to load, the joint to the sensor housing was too thin, and the print would run long. I switched to an open frame, cookie-cutter style, which cut print time and weight and left rails for the motor controller.</p><p>Two smaller fixes mattered too. The OLED bracket was redrawn to match the screen&rsquo;s exact side profile so it snaps in. The ArUco platform moved to a centered mount and lost its front overhang, which had risked blocking the sensors and caused printing defects. I added fillets to the corners for strength.</p><div class="figs"><figure><img src="../images/robot/cad.jpg" alt="Final open-frame attachment." loading="lazy"><figcaption>Final open-frame attachment.</figcaption></figure><figure><img src="../images/robot/oled-bracket.jpg" alt="OLED bracket: the first version slid out, the second snaps in." loading="lazy"><figcaption>OLED bracket: the first version slid out, the second snaps in.</figcaption></figure><figure><img src="../images/robot/cad-assembly.jpg" alt="Attachment with the ArUco platform and OLED bracket." loading="lazy"><figcaption>Attachment with the ArUco platform and OLED bracket.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Electrical design</h2><p>There was no breadboard. I built a ground harness with solder-seal heat shrink connectors, and spliced the 5V line the same way because the board has few 5V pins. The robot runs on a 4.8V Ni-MH pack.</p><p>Each sensor has its own trigger and echo pins, the OLED uses I2C, and the motor controller takes PWM signals from two pins on the WeMos D1.</p><div class="figs"><figure><img src="../images/robot/circuit.jpg" alt="Wiring diagram." loading="lazy"><figcaption>Wiring diagram.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Software</h2><p>The code runs on a fixed 100 ms loop. It computes the bearing to the next checkpoint with atan2(), turns in proportion to the heading error, and stops for two seconds when within 10 units of a target.</p><p>Avoidance runs first each cycle: below 15 cm in front it pivots toward the side with more clearance, and below 9 cm on either side it drifts away from the wall. The OLED shows live position, heading and target number.</p><div class="figs"><figure><img src="../images/robot/flowchart.jpg" alt="Program flow." loading="lazy"><figcaption>Program flow.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Assembly</h2><p>The printed attachment sandwiches between the acrylic piece and the Zumo chassis with three screws. The OLED bracket and the marker platform friction fit, and the leftover screw holds the motor controller.</p><div class="figs"><figure><img src="../images/robot/final-side.jpg" alt="Side view of the finished robot." loading="lazy"><figcaption>Side view of the finished robot.</figcaption></figure></div></div></section><section><div class="wrap prose"><h2>Testing and results</h2><p>In the week 5 road test the robot drove straight, turned around at the end of the field and drove back using its front sensor. In the week 9 left-hand loop it drifted at first, so I tuned the motor values and added a right-side sensor to hold distance from the wall.</p><p>In the final navigation test it reached all four checkpoints in 32 seconds with no collisions. Tracking was unreliable when the robot moved too fast, so we slowed it down and tested in the upstairs lab.</p></div></section><section><div class="wrap prose"><h2>What I would change</h2><p>Use a full PID controller for smoother heading control, add logic to catch dropped or stale MQTT readings, angle the side sensors outward so they stop clipping obstacle edges, solder connections instead of relying on loose pins, and add a power switch. We mixed up battery power and ground once, which fried a board.</p></div></section></main>
+<footer><div class="wrap"><a href="../index.html#projects">Back to all projects</a> &middot; <a href="../Satyam_Patel_Resume.pdf">Resume (PDF)</a></div></footer></body></html>

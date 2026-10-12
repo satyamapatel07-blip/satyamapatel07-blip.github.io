@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satyam Patel | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering student at Stevens Institute of Technology focused on CAD, precision machining and product design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eceff1; --card:#f7f8f9; --ink:#15222c; --muted:#4d5d69; --line:#c3ccd2;
+  --steel:#2d5b7a; --accent:#d9480f;
+  --head:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#11181e; --card:#19222a; --ink:#e8edf0; --muted:#9fb0bb; --line:#2f3d47; --steel:#7fb2d3; --accent:#ff8a4c}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.075rem;line-height:1.65}
+a{color:var(--steel)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;padding-bottom:.8rem;gap:1rem;flex-wrap:wrap}
+nav strong{font-family:var(--head);font-weight:700}
+nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{font-family:var(--head);font-weight:500;font-size:.95rem;color:var(--ink);text-decoration:none}
+nav ul a:hover{color:var(--accent)}
+.hero{padding:4.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem);font-weight:800;font-stretch:112%;letter-spacing:-.02em}
+.hero p.role{font-family:var(--head);font-size:1.2rem;font-weight:500;color:var(--steel);margin:1rem 0 .6rem}
+.hero p.lead{max-width:34rem;margin:0 0 1.6rem;color:var(--muted)}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{font-family:var(--head);font-weight:600;padding:.7rem 1.2rem;border:2px solid var(--ink);color:var(--ink);text-decoration:none;border-radius:2px}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--accent);background:var(--accent);color:#fff}
+.drawing{width:100%;height:auto;color:var(--ink)}
+.drawing .cap{font-family:var(--head);font-size:11px;fill:var(--muted)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:750;margin-bottom:1.6rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.about p{margin:0 0 1rem;max-width:40rem}
+.facts{font-family:var(--head);font-size:.95rem;border-left:3px solid var(--accent);padding-left:1rem;align-self:start}
+.facts div+div{margin-top:.8rem}
+.facts b{display:block;font-weight:600;color:var(--muted);font-size:.85rem}
+.entry{background:var(--card);border:1px solid var(--line);padding:1.5rem 1.7rem;margin-bottom:1.2rem;border-radius:2px}
+.entry header{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline;margin-bottom:.7rem}
+.entry h3{font-size:1.35rem;font-weight:700}
+.entry .org{font-family:var(--head);color:var(--steel);font-weight:500}
+.entry .when{font-family:var(--head);color:var(--muted);font-size:.9rem}
+.entry ul{margin:.5rem 0 0;padding-left:1.2rem}
+.entry li{margin-bottom:.4rem}
+.feature{border-left:5px solid var(--accent)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem}
+.skills h3{font-size:1.05rem;margin-bottom:.6rem}
+.skills ul{list-style:none;padding:0;margin:0}
+.skills li{padding:.25rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.contact p{max-width:38rem}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-family:var(--head);font-size:.9rem}
+@media (max-width:760px){.hero .wrap,.two{grid-template-columns:1fr}.hero{padding-top:2.5rem}}
+
+.card-link{display:grid;grid-template-columns:200px 1fr;gap:1.4rem;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);margin-bottom:1.2rem;border-radius:2px}
+.card-link:hover{border-color:var(--accent)}
+.card-link img{width:100%;height:100%;object-fit:cover;display:block;min-height:150px}
+.card-link .t{padding:1.2rem 1.4rem 1.2rem 0}
+.card-link h3{font-size:1.35rem;margin-bottom:.2rem}
+.card-link p{margin:.5rem 0 0}
+.card-link .more{font-family:var(--head);font-weight:600;color:var(--accent);margin-top:.6rem;display:inline-block}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+.contact-grid .entry{margin:0}
+.qr{display:flex;gap:1.2rem;align-items:center}
+.qr img{width:140px;height:140px;background:#fff;padding:6px;border:1px solid var(--line)}
+.back{display:inline-block;margin:1.5rem 0 0;font-family:var(--head);font-weight:600;text-decoration:none}
+.proj-head{padding:2rem 0 2rem}
+.proj-head h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;font-stretch:108%;letter-spacing:-.02em;margin:.5rem 0 .8rem}
+.proj-head p{max-width:42rem;color:var(--muted);margin:0}
+.facts-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:2rem 0}
+.facts-row div{border-left:3px solid var(--accent);padding-left:.9rem;font-family:var(--head)}
+.facts-row b{display:block;font-size:.85rem;font-weight:600;color:var(--muted)}
+figure{margin:1.2rem 0}
+figure img{max-width:100%;height:auto;display:block;border:1px solid var(--line);background:#fff}
+figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-top:.4rem}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;align-items:start}
+.figs figure{margin:.5rem 0}
+.prose p{max-width:44rem;margin:0 0 1rem}
+@media (max-width:760px){.card-link,.contact-grid{grid-template-columns:1fr}.card-link .t{padding:0 1.2rem 1.2rem}.card-link img{height:200px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <strong>Satyam Patel</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="Satyam_Patel_Resume.pdf">Resume</a></li><li><a href="#contact">LinkedIn</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Satyam Patel</h1>
+      <p class="role">Mechanical Engineering student at Stevens Institute of Technology</p>
+      <p class="lead">I take ideas from CAD model to finished part. Precision machining, product design and robotics, with an Eagle Scout's habit of finishing what I start.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="Satyam_Patel_Resume.pdf">Open resume</a>
+      </div>
+    </div>
+    <svg class="drawing" viewBox="0 0 440 240" role="img" aria-label="Technical drawing of a turned mechanical pencil barrel with dimension lines">
+      <g fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M40 90 H120 V80 H300 V92 H360 V148 H300 V160 H120 V150 H40 Z"/>
+        <path d="M120 80 V160 M300 80 V160" stroke-width="1"/>
+        <path d="M360 100 L400 120 L360 140" />
+      </g>
+      <g stroke="var(--accent)" stroke-width="1.2" fill="none">
+        <path d="M20 120 H420" stroke-dasharray="14 4 3 4"/>
+        <path d="M40 188 H360"/><path d="M40 160 V196 M360 160 V196" stroke-width=".8"/>
+        <path d="M40 188 l8 -4 v8 z M360 188 l-8 -4 v8 z" fill="var(--accent)"/>
+        <path d="M80 90 V150" /><path d="M76 94 l4 -8 l4 8 M76 146 l4 8 l4 -8"/>
+      </g>
+      <text class="cap" x="200" y="206" text-anchor="middle">Overall length, tight-tolerance turning</text>
+      <text class="cap" x="92" y="124">Ø</text>
+      <text class="cap" x="40" y="60">Capstone: custom metal barrel, Pentel P207</text>
+      <text class="cap" x="40" y="75">Drawing is illustrative, not to scale</text>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section id="about" class="about">
+  <div class="wrap two">
+    <div>
+      <h2>About</h2>
+      <p>I'm a Mechanical Engineering student at Stevens Institute of Technology with a minor in Systems and Industrial Engineering. I care about mechanical design, manufacturing and robotics, and about solving real engineering problems.</p>
+      <p>Hands-on work with manual lathes and mills, dimensional inspection, CAD and 3D printing taught me to look at a part from both sides: how it is designed, and how it gets made, tested and improved as part of a larger system.</p>
+      <p>I am looking to grow in mechanical design, manufacturing, product development and systems engineering, and I'm always glad to connect with engineers, students and professionals in those fields.</p>
+    </div>
+    <div class="facts">
+      <div><b>Studying</b>B.E. Mechanical Engineering, Stevens Institute of Technology (expected May 2029)</div>
+      <div><b>Minor</b>Systems and Industrial Engineering</div>
+      <div><b>Based in</b>Hoboken, NJ</div>
+      <div><b>Open to</b>Engineering internships and co-ops</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <article class="entry feature">
+      <header>
+        <div><h3>Advanced Manufacturing Intern</h3><span class="org">Precision Forms, Butler, NJ</span></div>
+        <span class="when">May 2026 to August 2026</span>
+      </header>
+      <ul>
+        <li>Machined, inspected and quality-checked high-precision components for aerospace and medical applications, measuring with micrometers against strict tolerances.</li>
+        <li>Set up and ran manual lathes, mills and screw machines for different materials and production requirements, and learned to troubleshoot as machine conditions changed during a run.</li>
+        <li>Read engineering drawings and followed parts from drawing to finished piece within specification.</li>
+        <li>Finished with a capstone: a custom-machined metal barrel for a Pentel P207 mechanical pencil, focused on tight-tolerance turning and assembly design.</li>
+        <li>Came away with a stronger sense of design for manufacturability: weighing material, geometry and tolerances at the design stage.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <a class="card-link" href="projects/watering-system.html"><img src="images/watering/final.jpg" alt="Smart watering system next to a plant"><div class="t"><h3>Smart Autonomous Watering System</h3><span class="org">Electrical and product designer, Sept to Dec 2025</span><p>An Arduino-based IoT device that monitors soil moisture, light and humidity, waters a plant on its own and streams data to the cloud. It ran for five days straight.</p><span class="more">View project details</span></div></a>
+    <a class="card-link" href="projects/autonomous-robot.html"><img src="images/robot/final-front.jpg" alt="Autonomous robot with printed sensor mount"><div class="t"><h3>Autonomous Navigation Robot</h3><span class="org">Mechanical designer, spring 2026</span><p>A tracked robot with a custom 3D printed sensor mount that drives to four checkpoints using live coordinates and ultrasonic avoidance. It finished the course in 32 seconds with no collisions.</p><span class="more">View project details</span></div></a>
+    <h3 style="margin:2rem 0 1rem">Teams and clubs</h3>
+<article class="entry">
+      <header>
+        <div><h3>VEX Robotics Team</h3><span class="org">Lead Engineer and Captain</span></div>
+        <span class="when">Sept 2023 to June 2025</span>
+      </header>
+      <ul>
+        <li>Led design and assembly of competitive robots while keeping them within VEX technical regulations.</li>
+        <li>Mentored teammates on mechanical assembly and iterative design to solve field challenges.</li>
+        <li>Worked with coaches on club fundraising and equipment procurement.</li>
+      </ul>
+    </article>
+    <article class="entry">
+      <header>
+        <div><h3>Drone Racing Club</h3><span class="org">Vice President</span></div>
+        <span class="when">Sept 2020 to June 2025</span>
+      </header>
+      <ul>
+        <li>Managed equipment inventory and troubleshot and repaired racing drones.</li>
+        <li>Ran training sessions on flight mechanics and safety for new members.</li>
+        <li>Planned meeting agendas and club events with the President.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Design and simulation</h3><ul><li>SolidWorks 2025</li><li>Onshape</li><li>Canva</li></ul></div>
+      <div><h3>Manufacturing</h3><ul><li>Precision machining</li><li>Manual lathes and milling</li><li>Part inspection and quality control</li><li>Welding</li><li>3D printing (Bambu Lab P2S, Cura)</li></ul></div>
+      <div><h3>Software and systems</h3><ul><li>Arduino IDE</li><li>Cloud data streaming</li><li>Google Workspace, Microsoft 365</li><li>Windows and macOS</li></ul></div>
+      <div><h3>Working with people</h3><ul><li>Project management</li><li>Cross-functional team leadership</li><li>Technical communication</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap two">
+    <div>
+      <h2>Leadership and awards</h2>
+      <article class="entry">
+        <header><div><h3>Eagle Scout</h3><span class="org">Boy Scouts of America, Patriots Path Council</span></div><span class="when">2018 to present</span></header>
+        <ul>
+          <li>Earned Eagle Scout rank in 2025 and completed a community service capstone.</li>
+          <li>Inducted into the Order of the Arrow, Scouting's national honor society, for service and leadership.</li>
+        </ul>
+      </article>
+      <p>Also: National Youth Leadership Training graduate and Sea Base Captains Club Award for leadership and teamwork.</p>
+    </div>
+    <div>
+      <h2>Education</h2>
+      <article class="entry">
+        <h3>Stevens Institute of Technology</h3>
+        <span class="org">B.E. Mechanical Engineering, minor in Systems and Industrial Engineering</span>
+        <p class="when">Hoboken, NJ. Expected May 2029</p>
+      </article>
+      <article class="entry">
+        <h3>Jefferson Township High School</h3>
+        <span class="org">STEM Academy graduate, National Honor Society</span>
+        <p class="when">Oak Ridge, NJ. June 2025</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Resume and LinkedIn</h2>
+    <p>I'm looking for engineering internships and happy to talk with anyone in mechanical design or manufacturing.</p>
+    <div class="contact-grid">
+      <div class="entry"><h3>Resume</h3><p>One page with my education, experience and skills.</p><div class="btns"><a class="btn primary" href="Satyam_Patel_Resume.pdf">Open resume (PDF)</a></div></div>
+      <div class="entry"><h3>LinkedIn</h3><div class="qr"><img src="images/linkedin-qr.png" alt="QR code linking to Satyam Patel's LinkedIn profile"><div><p style="margin:0 0 .8rem">Scan the code or follow the link.</p><a class="btn" href="https://www.linkedin.com/in/satyam-patel-981401383/" rel="noopener">Open LinkedIn</a></div></div></div>
+    </div>
+    <div class="btns" style="margin-top:1.5rem"><a class="btn" href="mailto:satyamapatel07@gmail.com">Email me</a></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Satyam Patel, Hoboken, NJ</div></footer>
+</body>
+</html>
