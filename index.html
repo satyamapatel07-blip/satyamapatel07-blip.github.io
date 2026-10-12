@@ -111,11 +111,16 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
   .hero h1{font-size:clamp(2.6rem,13vw,3.4rem)}
   .hero p.lead{margin-bottom:1.2rem}
   .btn{padding:.6rem 1rem;font-size:.95rem}
-  .hero-links{flex-direction:row;justify-content:flex-start;align-items:flex-start;gap:1.8rem}
+  .hero-links{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-items:flex-start;gap:1.2rem 1.8rem}
+  .hero-links a.hs-card{flex-basis:100%}
   .li-card img{width:112px;height:112px}
   .doodle{width:112px;height:112px}
   .hero-links span{font-size:.9rem}
 }
+.hero-links a.hs-card{display:flex;align-items:center;gap:.7rem;margin-top:.2rem}
+.hs-card span{margin-top:0}
+.hs-icon{width:46px;height:46px;color:var(--doodle);transition:color .2s;flex:none}
+.hs-card:hover .hs-icon,.hs-card:focus-visible .hs-icon,.hs-card:hover span{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -163,6 +168,16 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
           <path d="M182 22 l8 14 M194 20 v12 M186 40 h12" stroke-width="3"/>
         </svg>
         <span>Resume</span>
+      </a>
+      <a class="hs-card" href="https://app.joinhandshake.com/profiles/satyamapatel-07" rel="noopener" aria-label="Open Satyam Patel's Handshake profile">
+        <svg class="hs-icon" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 24 L16 22 L20 42 L9 44 Z" fill="currentColor"/>
+          <path d="M59 24 L48 22 L44 42 L55 44 Z" fill="currentColor"/>
+          <path d="M16 24 L29 19 L38 24 L48 23"/>
+          <path d="M20 41 L30 47 L39 44 L44 40"/>
+          <path d="M25 31 l6 6 M31 27 l8 8 M37 25 l6 6"/>
+        </svg>
+        <span>Handshake profile</span>
       </a>
     </div>
   </div>
@@ -242,7 +257,7 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
     <div class="skills">
       <div><h3>Design and simulation</h3><ul><li>SolidWorks 2025</li><li>Onshape</li><li>Canva</li></ul></div>
       <div><h3>Manufacturing</h3><ul><li>Precision machining</li><li>Manual lathes and milling</li><li>Part inspection and quality control</li><li>Welding</li><li>3D printing (Bambu Lab P2S, Cura)</li></ul></div>
-      <div><h3>Software and systems</h3><ul><li>Arduino IDE</li><li>Cloud data streaming</li><li>Google Workspace, Microsoft 365</li><li>Windows and macOS</li></ul></div>
+      <div><h3>Software and systems</h3><ul><li>Arduino IDE and C++</li><li>MQTT and cloud data streaming</li><li>Google Workspace, Microsoft 365</li><li>Windows and macOS</li></ul></div>
       <div><h3>Working with people</h3><ul><li>Project management</li><li>Cross-functional team leadership</li><li>Technical communication</li></ul></div>
     </div>
   </div>
