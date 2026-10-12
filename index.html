@@ -91,6 +91,15 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
 .figs figure{margin:.5rem 0}
 .prose p{max-width:44rem;margin:0 0 1rem}
 @media (max-width:760px){.card-link,.contact-grid{grid-template-columns:1fr}.card-link .t{padding:0 1.2rem 1.2rem}.card-link img{height:200px}}
+
+.hero-links{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.hero-links a{display:block;text-decoration:none;color:var(--ink);text-align:center;font-family:var(--head);font-weight:600}
+.hero-links span{display:block;margin-top:.5rem}
+.hero-links img{display:block;background:#fff;border:1px solid var(--line);transition:border-color .2s}
+.hero-links a:hover img,.hero-links a:focus-visible img{border-color:var(--accent)}
+.hero-links a:hover span{color:var(--accent)}
+.li-card img{width:170px;height:170px;border-radius:50%;object-fit:cover;background:var(--card);border:3px solid var(--line)}
+.res-card img{width:min(230px,60vw);height:auto}
 </style>
 </head>
 <body>
@@ -118,23 +127,16 @@ figcaption{font-family:var(--head);font-size:.88rem;color:var(--muted);margin-to
         <a class="btn" href="Satyam_Patel_Resume.pdf">Open resume</a>
       </div>
     </div>
-    <svg class="drawing" viewBox="0 0 440 240" role="img" aria-label="Technical drawing of a turned mechanical pencil barrel with dimension lines">
-      <g fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M40 90 H120 V80 H300 V92 H360 V148 H300 V160 H120 V150 H40 Z"/>
-        <path d="M120 80 V160 M300 80 V160" stroke-width="1"/>
-        <path d="M360 100 L400 120 L360 140" />
-      </g>
-      <g stroke="var(--accent)" stroke-width="1.2" fill="none">
-        <path d="M20 120 H420" stroke-dasharray="14 4 3 4"/>
-        <path d="M40 188 H360"/><path d="M40 160 V196 M360 160 V196" stroke-width=".8"/>
-        <path d="M40 188 l8 -4 v8 z M360 188 l-8 -4 v8 z" fill="var(--accent)"/>
-        <path d="M80 90 V150" /><path d="M76 94 l4 -8 l4 8 M76 146 l4 8 l4 -8"/>
-      </g>
-      <text class="cap" x="200" y="206" text-anchor="middle">Overall length, tight-tolerance turning</text>
-      <text class="cap" x="92" y="124">Ø</text>
-      <text class="cap" x="40" y="60">Capstone: custom metal barrel, Pentel P207</text>
-      <text class="cap" x="40" y="75">Drawing is illustrative, not to scale</text>
-    </svg>
+    <div class="hero-links">
+      <a class="li-card" href="https://www.linkedin.com/in/satyam-patel-981401383/" rel="noopener" aria-label="Open Satyam Patel's LinkedIn profile">
+        <img src="images/linkedin-photo.jpg" alt="Photo of Satyam Patel, linking to his LinkedIn profile">
+        <span>Connect on LinkedIn</span>
+      </a>
+      <a class="res-card" href="Satyam_Patel_Resume.pdf" aria-label="Open resume as PDF">
+        <img src="images/resume-preview.png" alt="Preview of Satyam Patel's resume">
+        <span>Open resume (PDF)</span>
+      </a>
+    </div>
   </div>
 </header>
 
